@@ -1,0 +1,23 @@
+ext {
+    android = [
+            minSdkVersion    : 19,
+            compileSdkVersion: 29,
+            buildToolsVersion: "29.0.3",
+            targetSdkVersion : 29
+    ]
+
+    dependencies = [
+            //AndroidX
+            androidx                  : "1.1.0",
+
+            //JSON 解析
+            fastjson                  : "1.2.71",
+
+            //方便使用且线程安全的时间库
+            joda_time                 : "2.10.6",
+
+            //运行时权限申请
+            easypermissions           : "3.0.0",
+
+    ]
+}
