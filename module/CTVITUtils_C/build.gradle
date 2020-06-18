@@ -4,22 +4,6 @@ apply plugin: 'maven'
 def config = rootProject.ext
 
 android {
-    signingConfigs {
-//        keystore {
-//            storeFile file("../CCTV5.keystore")
-//            storePassword "CCTV5_CCTV"
-//            keyAlias 'cctvsochi'
-//            keyPassword 'CCTV5_CCTV'
-//        }
-
-        keystore {
-            storeFile file("../keystore.jks")
-            storePassword "111111"
-            keyAlias 'framework'
-            keyPassword '111111'
-        }
-    }
-
     compileSdkVersion config.android.compileSdkVersion
     buildToolsVersion config.android.buildToolsVersion
 
