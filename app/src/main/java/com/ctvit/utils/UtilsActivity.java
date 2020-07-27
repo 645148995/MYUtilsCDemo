@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.ctvit.c_utils.content.CtvitStringUtils;
 import com.ctvit.c_utils.device.CtvitNetSpeedUtils;
 import com.ctvit.c_utils.device.CtvitSDCardUtils;
 import com.ctvit.c_utils.file.CtvitSizeConverter;
@@ -37,7 +38,9 @@ public class UtilsActivity extends AppCompatActivity {
         //signInfoDemo();
         //netSpeed();
 
-        aaa();
+//        aaa();
+        String aa = CtvitStringUtils.substring("的士大夫aa", 5);
+        System.out.println("===" + aa);
     }
 
     /**
