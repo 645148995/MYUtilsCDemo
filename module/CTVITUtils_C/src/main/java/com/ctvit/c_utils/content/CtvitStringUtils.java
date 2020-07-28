@@ -16,7 +16,7 @@ public class CtvitStringUtils {
      * @description 校验字符串，去掉所有空格后，是否为空
      **/
     public static boolean isTrimNull(String str) {
-        if (str == null || TextUtils.isEmpty(str.replace(" ", "")))
+        if (str == null || TextUtils.isEmpty(str.toLowerCase().replace("null", "").replace(" ", "")))
             return true;
         return false;
     }
