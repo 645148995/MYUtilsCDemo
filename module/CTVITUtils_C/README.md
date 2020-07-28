@@ -1,5 +1,11 @@
 ## UtilsLibrary_C
 
+郭兴国 2020年7月28日修改：
+1、CtvitStringUtils 加isTrimNull 校验字符串，去掉所有空格后，是否为空
+2、SystemBarlUtils 加setColor设置沉浸模式
+
+-----------------------------------------------------------
+
 郭兴国 2020年7月27日修改：
 1、CtvitStringUtils 按字符截取字符串，一个汉字或全角字符算2个字符
 2、将快照版本升级为0.0.0.3-SNAPSHOT

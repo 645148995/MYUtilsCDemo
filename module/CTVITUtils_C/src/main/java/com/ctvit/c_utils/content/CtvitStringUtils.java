@@ -7,6 +7,20 @@ import java.util.Map;
 import java.util.UUID;
 
 public class CtvitStringUtils {
+
+    /**
+     * @param str 需要判断的字符
+     * @return boolean true 是空. false 不是空
+     * @author guoxi
+     * @date 2020/7/28 14:15
+     * @description 校验字符串，去掉所有空格后，是否为空
+     **/
+    public static boolean isTrimNull(String str) {
+        if (str == null || TextUtils.isEmpty(str.replace(" ", "")))
+            return true;
+        return false;
+    }
+
     /**
      * 判断一个字符是汉字还是字符
      *
