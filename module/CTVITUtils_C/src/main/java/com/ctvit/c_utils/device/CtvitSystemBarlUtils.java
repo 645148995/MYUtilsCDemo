@@ -16,7 +16,7 @@ import com.ctvit.c_utils.content.CtvitLogUtils;
 /**
  * 状态栏相关工具类
  */
-public final class SystemBarlUtils {
+public final class CtvitSystemBarlUtils {
 
     /**
      * 显示/隐藏顶部通知栏
