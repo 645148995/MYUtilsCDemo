@@ -1,5 +1,10 @@
 ## UtilsLibrary_C
 
+郭兴国 2020年7月31日修改：
+1、CtvitStatusBarUtils 增加设置状态栏字体图标颜色的方法
+2、SystemBarlUtils 删除 setColor设置沉浸模式
+3、maven版本升级为0.0.0.8-SNAPSHOT
+
 郭兴国 2020年7月28日修改：
 1、CtvitStringUtils 加isTrimNull 校验字符串，去掉所有空格后，是否为空
 2、SystemBarlUtils 加setColor设置沉浸模式
