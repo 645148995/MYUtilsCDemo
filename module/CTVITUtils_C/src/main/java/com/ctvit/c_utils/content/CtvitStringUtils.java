@@ -7,6 +7,20 @@ import java.util.Map;
 import java.util.UUID;
 
 public class CtvitStringUtils {
+
+    /**
+     * @param str 需要判断的字符
+     * @return boolean true 是空. false 不是空
+     * @author guoxi
+     * @date 2020/7/28 14:15
+     * @description 校验字符串，去掉所有空格后，是否为空
+     **/
+    public static boolean isTrimNull(String str) {
+        if (str == null || TextUtils.isEmpty(str.toLowerCase().replace("null", "").replace(" ", "")))
+            return true;
+        return false;
+    }
+
     /**
      * 判断一个字符是汉字还是字符
      *
@@ -114,5 +128,34 @@ public class CtvitStringUtils {
         sb.append((ipInt >> 16) & 0xFF).append(".");
         sb.append((ipInt >> 24) & 0xFF);
         return sb.toString();
+    }
+
+    /**
+     * @param str   原始字符串
+     * @param count 要截取的字符数
+     * @author guoxi
+     * @date 2020/7/27 21:15
+     * @description 按字符截取字符串，一个汉字或全角字符算2个字符
+     **/
+    public static String substring(String str, int count) {
+        if (TextUtils.isEmpty(str))
+            return "";
+
+        StringBuffer buff = new StringBuffer();
+        char c;
+        int sum = 0;
+        for (int i = 0; i < count; i++) {
+            c = str.charAt(i);
+            if (CtvitStringUtils.isLetter(c) && count - sum > 0) { //是半角字符，且还没达到count的数量
+                buff.append(c);
+                sum++;
+            } else if (!CtvitStringUtils.isLetter(c) && count - sum > 1) { //是全角字符，且还没达到count的数量
+                buff.append(c);
+                sum += 2;
+            } else {
+                break;
+            }
+        }
+        return buff.toString();
     }
 }
