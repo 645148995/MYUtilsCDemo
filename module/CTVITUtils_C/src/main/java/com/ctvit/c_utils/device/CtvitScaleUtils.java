@@ -71,6 +71,25 @@ public class CtvitScaleUtils {
     }
 
     /**
+     * 根据屏幕宽度计算高度比例，用于宽大于高
+     *
+     * @param scaleW   宽比例
+     * @param scaleH   高比例
+     * @param marginPx 左右边距
+     * @return 高度 单位 px
+     */
+    public static int countScale(int scaleW, int scaleH, int marginPx) {
+        int sw = CtvitScreenUtils.getWidth() - marginPx;
+        float scale = 1;
+        try {
+            scale = Float.valueOf(percnet(Double.valueOf(scaleW + ""), Double.valueOf(scaleH + "")));
+        } catch (Exception e) {
+            CtvitLogUtils.e(e);
+        }
+        return Math.round(sw / scale);
+    }
+
+    /**
      * @param scaleW   宽比例
      * @param scaleH   高比例
      * @param column   列数
