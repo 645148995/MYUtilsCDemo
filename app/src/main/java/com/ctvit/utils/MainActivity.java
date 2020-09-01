@@ -17,6 +17,6 @@ public class MainActivity extends AppCompatActivity {
 //        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, height);
 //        img.setLayoutParams(layoutParams);
 
-        CtvitStatusBarUtils.setStatusTransparent(this);
+        CtvitStatusBarUtils.setStatusTransparent(this, true);
     }
 }
