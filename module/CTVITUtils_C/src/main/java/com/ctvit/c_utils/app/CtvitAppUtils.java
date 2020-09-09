@@ -44,7 +44,7 @@ public final class CtvitAppUtils {
      * @param file APK在本地的路径
      */
     public static void openApk(Context context, String authority, File file) {
-        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT || Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT_WATCH){
+        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT || Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT_WATCH) {
             CtvitSDCardUtils.chmod("777", file.getParentFile());
             CtvitSDCardUtils.chmod("777", file);
         }
@@ -134,6 +134,22 @@ public final class CtvitAppUtils {
         PackageManager packageManager = CtvitUtils.getContext().getPackageManager();
         return packageManager.getApplicationInfo(CtvitUtils.getContext().getPackageName(),
                 PackageManager.GET_META_DATA);
+    }
+
+    /**
+     * 判断Activity是否Destroy
+     *
+     * @param mActivity
+     * @return true:已销毁
+     */
+    public static boolean isDestroy(Activity mActivity) {
+        if (mActivity == null ||
+                mActivity.isFinishing() ||
+                (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1 && mActivity.isDestroyed())) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
