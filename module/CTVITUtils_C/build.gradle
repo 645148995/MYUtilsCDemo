@@ -29,7 +29,7 @@ android {
 dependencies {
     api "com.alibaba:fastjson:${config.dependencies.fastjson}"
     api "joda-time:joda-time:${config.dependencies.joda_time}"
-    api "pub.devrel:easypermissions:${config.dependencies.easypermissions}"
+    compileOnly "pub.devrel:easypermissions:${config.dependencies.easypermissions}"
 }
 
 /**
