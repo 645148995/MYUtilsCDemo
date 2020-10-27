@@ -7,13 +7,12 @@ ext {
     ]
 
     dependencies = [
-            //AndroidX
-            androidx : "1.1.0",
+            android_appcompat: "1.2.0",
 
             //JSON 解析
-            fastjson : "1.2.72",
+            fastjson         : "1.2.72",
 
             //方便使用且线程安全的时间库
-            joda_time: "2.10.6",
+            joda_time        : "2.10.6",
     ]
 }

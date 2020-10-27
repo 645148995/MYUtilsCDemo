@@ -26,7 +26,7 @@ android {
 }
 
 dependencies {
-    compileOnly 'androidx.appcompat:appcompat:1.2.0'
+    compileOnly "androidx.appcompat:appcompat:${config.dependencies.android_appcompat}"
     api "com.alibaba:fastjson:${config.dependencies.fastjson}"
     api "joda-time:joda-time:${config.dependencies.joda_time}"
 }
