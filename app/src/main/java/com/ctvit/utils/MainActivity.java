@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ctvit.c_utils.app.CtvitStatusBarUtils;
+import com.ctvit.c_utils.device.CtvitDeviceUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
 //        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, height);
 //        img.setLayoutParams(layoutParams);
 
-        CtvitStatusBarUtils.setStatusTransparent(this, false);
+        System.out.println(CtvitDeviceUtils.getImei() + " getImei");
+        System.out.println(CtvitDeviceUtils.getSerial() + " getSerial");
+        System.out.println(CtvitDeviceUtils.getAndroidId() + " getAndroidId");
+        System.out.println(CtvitDeviceUtils.getDeviceId() + " getDeviceId");
     }
 }

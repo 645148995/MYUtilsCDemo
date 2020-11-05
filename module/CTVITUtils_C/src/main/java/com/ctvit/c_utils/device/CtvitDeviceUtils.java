@@ -38,11 +38,15 @@ public class CtvitDeviceUtils {
             deviceId = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
         }
 
-        if (TextUtils.isEmpty(deviceId) || "9774d56d682e549c".equals(deviceId)) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P)
-                deviceId = Build.getSerial();
-            else
-                deviceId = Build.SERIAL;
+        try {
+            if (TextUtils.isEmpty(deviceId) || "9774d56d682e549c".equals(deviceId)) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P)
+                    deviceId = Build.getSerial();
+                else
+                    deviceId = Build.SERIAL;
+            }
+        } catch (Exception e) {
+
         }
         return deviceId;
     }
@@ -81,9 +85,13 @@ public class CtvitDeviceUtils {
      */
     public static String getImei() {
         String deviceId = "";
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            if (ActivityCompat.checkSelfPermission(CtvitUtils.getContext(), Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED)
-                deviceId = ((TelephonyManager) CtvitUtils.getContext().getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                if (ActivityCompat.checkSelfPermission(CtvitUtils.getContext(), Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED)
+                    deviceId = ((TelephonyManager) CtvitUtils.getContext().getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
+            }
+        } catch (Exception e) {
+
         }
         return deviceId;
     }
@@ -104,13 +112,17 @@ public class CtvitDeviceUtils {
      */
     public static String getSerial() {
         String deviceId = "";
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            if (ActivityCompat.checkSelfPermission(CtvitUtils.getContext(), Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED)
-                deviceId = Build.getSerial();
-        }
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                if (ActivityCompat.checkSelfPermission(CtvitUtils.getContext(), Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED)
+                    deviceId = Build.getSerial();
+            }
 
-        if (TextUtils.isEmpty(deviceId))
-            deviceId = Build.SERIAL;
+            if (TextUtils.isEmpty(deviceId))
+                deviceId = Build.SERIAL;
+        } catch (Exception e) {
+
+        }
         return deviceId;
     }
 
