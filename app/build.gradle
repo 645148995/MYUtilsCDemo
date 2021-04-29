@@ -5,7 +5,7 @@ android {
     compileSdkVersion config.android.compileSdkVersion
     buildToolsVersion config.android.buildToolsVersion
     defaultConfig {
-        applicationId "com.ctvit.utils"
+        applicationId "com.SGY.utils"
         minSdkVersion config.android.minSdkVersion
         targetSdkVersion config.android.targetSdkVersion
         versionCode 20200622
@@ -33,6 +33,6 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 //
-    implementation project(path: ':module:CTVITUtils_C')
-//    implementation 'com.ctvit.common:utils:0.0.0.2-SNAPSHOT'
+    implementation project(path: ':module:MyUtils_C')
+
 }

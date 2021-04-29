@@ -19,8 +19,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven { url 'http://nexus.ops.ctvit.tv/repository/maven-releases-android/' }
-        maven { url 'http://nexus.ops.ctvit.tv/repository/maven-snapshots-android/' }
         flatDir {
             dirs "$rootProject.projectDir/aars" //就是你放aar的目录地址
         }

@@ -1,2 +1,2 @@
-include ':app', ':module:CTVITUtils_C'
-rootProject.name='CTVITUtilsCDemo'
+include ':app', ':module:MyUtils_C'
+rootProject.name='MYUtilsCDemo'
